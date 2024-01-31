@@ -25,7 +25,6 @@ const GameListTables = ({ game_data }) => {
                                 <tr>
                                     <th scope="row">
                                         <Media className="align-items-center">
-
                                             <Media>
                                                 <span className="mb-0 text-sm">{item?.name}</span>
                                             </Media>

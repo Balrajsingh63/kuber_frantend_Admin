@@ -20,15 +20,16 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Traffic
+                          Users
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">
-                          350,897
+                          3000
                         </span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
-                          <i className="fas fa-chart-bar" />
+
+                          <i className="fas fa-users" />
                         </div>
                       </Col>
                     </Row>
@@ -50,19 +51,19 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          New users
+                          Game Request
                         </CardTitle>
                         <span className="h2 font-weight-bold mb-0">2,356</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-warning text-white rounded-circle shadow">
-                          <i className="fas fa-chart-pie" />
+                          <i className="fas fa-chart-bar" />
                         </div>
                       </Col>
                     </Row>
                     <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-danger mr-2">
-                        <i className="fas fa-arrow-down" /> 3.48%
+                      <span className="text-success mr-2">
+                        <i className="fas fa-arrow-up" /> 3.48%
                       </span>{" "}
                       <span className="text-nowrap">Since last week</span>
                     </p>
@@ -78,21 +79,21 @@ const Header = () => {
                           tag="h5"
                           className="text-uppercase text-muted mb-0"
                         >
-                          Sales
+                          New Game
                         </CardTitle>
-                        <span className="h2 font-weight-bold mb-0">924</span>
+                        <span className="h2 font-weight-bold mb-0">24</span>
                       </div>
                       <Col className="col-auto">
                         <div className="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                          <i className="fas fa-users" />
+                          <i className="fas fa-chart-pie" />
                         </div>
                       </Col>
                     </Row>
                     <p className="mt-3 mb-0 text-muted text-sm">
-                      <span className="text-warning mr-2">
-                        <i className="fas fa-arrow-down" /> 1.10%
+                      <span className="text-success mr-2">
+                        <i className="fas fa-arrow-up" /> 1.10%
                       </span>{" "}
-                      <span className="text-nowrap">Since yesterday</span>
+                      <span className="text-nowrap">Since Monday</span>
                     </p>
                   </CardBody>
                 </Card>
@@ -118,7 +119,7 @@ const Header = () => {
                     </Row>
                     <p className="mt-3 mb-0 text-muted text-sm">
                       <span className="text-success mr-2">
-                        <i className="fas fa-arrow-up" /> 12%
+                        <i className="fas fa-arrow-up" /> 100%
                       </span>{" "}
                       <span className="text-nowrap">Since last month</span>
                     </p>

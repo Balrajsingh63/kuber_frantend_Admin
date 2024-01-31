@@ -1,9 +1,11 @@
 import Index from "views/Index.js";
-import GameScreen from "views/examples/Game";
-import GameRequest from "views/examples/GameRequest";
-import GameRequestList from "views/examples/GameRequestList";
-import Profile from "views/examples/Profile.js";
-import UserManagement from "views/examples/UserManagement";
+import AddGameScreen from "views/pages/AddGame";
+import GameResultScreen from "views/pages/AddGameResult";
+import GameRequest from "views/pages/GameRequest";
+import GameRequestList from "views/pages/GameRequestList";
+import Profile from "views/pages/Profile.js";
+import UserManagement from "views/pages/UserManagement";
+import WithdrawalList from "views/pages/WithdrawalList";
 
 var routes = [
   {
@@ -39,7 +41,7 @@ var routes = [
     path: "/Add-Games",
     name: "Add Games",
     icon: "ni ni-controller text-green",
-    component: <GameScreen />,
+    component: <AddGameScreen />,
     layout: "/admin",
   },
   {
@@ -49,6 +51,21 @@ var routes = [
     component: <GameRequestList />,
     layout: "/admin",
 
+  },
+  {
+    path: "/Payment-Withdrawal-List",
+    name: "Withdrawal List",
+    icon: "ni ni-curved-next text-danger",
+    component: <WithdrawalList />,
+    layout: "/admin",
+
+  },
+  {
+    path: "/Games-Result",
+    name: "Games Result",
+    icon: "ni ni-controller text-green",
+    component: <GameResultScreen />,
+    layout: "/admin",
   },
 
 ];
