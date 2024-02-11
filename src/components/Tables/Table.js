@@ -1,3 +1,5 @@
+import { ErrorToast } from "Helper/Toast";
+import { SuccessToast } from "Helper/Toast";
 import React from "react";
 import {
     Badge,
@@ -8,8 +10,29 @@ import {
     Media,
     Table,
 } from "reactstrap";
+import { ApiURL } from "services/apiConstants";
+import { deleteApi } from "services/services";
 
-const Tables = ({ user_data }) => {
+const Tables = ({ user_data, toggleModal, setVisible, visible, setName, setPhone, setUserId, getUserList, setStatus }) => {
+    toggleModal = (item) => {
+        setUserId(item?._id)
+        setName(item?.name)
+        setPhone(item?.mobile)
+        setStatus(item?.status)
+        setVisible(!visible);
+    };
+
+    const handleDelete = (item) => {
+        deleteApi(ApiURL.user_delete + "/" + item._id).then((res) => {
+            console.log({ res });
+            if (res && res?.status == true) {
+                SuccessToast(res?.message)
+                getUserList()
+            } else {
+                ErrorToast(res?.message)
+            }
+        })
+    }
     return (
         <>
             <Table className="align-items-center" responsive>
@@ -41,12 +64,8 @@ const Tables = ({ user_data }) => {
                                             {item?.status}
                                         </Badge>
                                     </td>
+
                                     <td>
-                                        <Badge color="green" className="badge-dot mr-4">
-                                            {"Good"}
-                                        </Badge>
-                                    </td>
-                                    <td className="text-right">
                                         <UncontrolledDropdown>
                                             <DropdownToggle
                                                 className="btn-icon-only text-light"
@@ -56,26 +75,20 @@ const Tables = ({ user_data }) => {
                                                 color=""
                                                 onClick={(e) => e.preventDefault()}
                                             >
-                                                <i className="fas fa-ellipsis-v" />
+                                                <i className="fas fa-ellipsis-v" style={{ fontSize: "20px" }} />
                                             </DropdownToggle>
                                             <DropdownMenu className="dropdown-menu-arrow" right>
                                                 <DropdownItem
                                                     href="#pablo"
-                                                    onClick={(e) => e.preventDefault()}
+                                                    onClick={(e) => handleDelete(item)}
                                                 >
-                                                    Action
+                                                    Delete
                                                 </DropdownItem>
                                                 <DropdownItem
                                                     href="#pablo"
-                                                    onClick={(e) => e.preventDefault()}
+                                                    onClick={(e) => toggleModal(item)}
                                                 >
-                                                    Users
-                                                </DropdownItem>
-                                                <DropdownItem
-                                                    href="#pablo"
-                                                    onClick={(e) => e.preventDefault()}
-                                                >
-                                                    Number
+                                                    Edit
                                                 </DropdownItem>
                                             </DropdownMenu>
                                         </UncontrolledDropdown>
