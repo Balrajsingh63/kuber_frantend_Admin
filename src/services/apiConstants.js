@@ -1,4 +1,4 @@
-export const localURL = "https://wild-lime-octopus-suit.cyclic.app/v1/admin/";
+export const localURL = "https://kuberbackend-production.up.railway.app/v1/admin/";
 
 export const ApiURL = {
   login: "login",
