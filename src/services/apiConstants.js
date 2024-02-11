@@ -1,4 +1,4 @@
-export const localURL = "http://192.168.1.3:3006/v1/admin/";
+export const localURL = "https://wild-lime-octopus-suit.cyclic.app/v1/admin/";
 
 export const ApiURL = {
   login: "login",

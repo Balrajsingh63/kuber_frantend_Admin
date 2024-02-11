@@ -22,6 +22,7 @@ import { ErrorToast } from "Helper/Toast";
 import { ApiURL } from "services/apiConstants";
 import { useNavigate } from "react-router-dom";
 import { get } from "services/services";
+import { socket } from "services/socket";
 
 const GameResultScreen = () => {
   const navigate = useNavigate();
@@ -30,32 +31,37 @@ const GameResultScreen = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [gameData, setGameData] = useState([])
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const [isConnected, setIsConnected] = useState(socket.connected);
 
   const getUser_List = () => {
     get(ApiURL.game_List).then((res) => {
+      console.log("res?.data", res)
       if (res && res?.status === true) {
         setGameData(res?.data)
+        console.log("res?.data", res?.data)
       }
     })
   }
   useEffect(() => {
     getUser_List()
   }, [])
-
-
   const addGame = () => {
-    const formData = {
-      gameId: drop,
-      number: resultTime,
-    };
-    post(ApiURL.GameResult, formData).then(res => {
-      if (res && res?.data?.status == "active") {
-        SuccessToast(res?.message)
-      } else {
-        ErrorToast(res?.message)
-      }
-    });
+    // const formData = {
+    //   gameId: drop,
+    //   number: resultTime,
+    // };
+    socket.emit('result', { startTime: null, endTime: null, number: resultTime, resultTime: null, gameId: drop })
+
+    // post(ApiURL.GameResult, formData).then(res => {
+    //   if (res && res?.data?.status == "active") {
+    //     SuccessToast(res?.message)
+    //   } else {
+    //     ErrorToast(res?.message)
+    //   }
+    // });
   };
+
+
 
   const handleSubmit = () => {
     if (checkValidation() == false) {
@@ -74,6 +80,38 @@ const GameResultScreen = () => {
       return false;
     }
   };
+
+  useEffect(() => {
+    function onConnect() {
+      setIsConnected(true);
+    }
+
+    function onDisconnect() {
+      setIsConnected(false);
+    }
+
+    function onFooEvent(value) { }
+
+    socket.on('connection', onConnect);
+    socket.on('disconnect', onDisconnect);
+    socket.on('result_reload', (data) => {
+      if (data?.status === true) {
+        SuccessToast("result success")
+      } else {
+        ErrorToast("result error")
+      }
+    })
+
+    socket.on('Error', (error) => {
+      console.log('error **** ', error);
+    });
+    socket.on('foo', onFooEvent);
+    return () => {
+      socket.off('connect', onConnect);
+      socket.off('disconnect', onDisconnect);
+      socket.off('foo', onFooEvent);
+    };
+  }, []);
 
 
   return (
