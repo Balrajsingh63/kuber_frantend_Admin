@@ -15,6 +15,7 @@ const GameTables = ({ game_data }) => {
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Game Number</th>
+                        <th scope="col">Price</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
@@ -23,7 +24,7 @@ const GameTables = ({ game_data }) => {
                 </thead>
                 {
                     game_data?.map((item) => {
-                        let number = item?.gameNumber
+
                         let formatDate = moment(item?.date).format('l');
                         return (
                             <tbody>
@@ -38,9 +39,15 @@ const GameTables = ({ game_data }) => {
                                     </th>
                                     <td>
                                         {
-                                            number.map((item) => item?.number + " ")
+                                            item?.data?.gameNumber?.number
                                         }
                                     </td>
+                                    <td>
+                                        {
+                                            item?.data?.gameNumber?.price
+                                        }
+                                    </td>
+
                                     <td>
                                         <Badge color="" className="badge-dot mr-4">
                                             {formatDate}

@@ -11,17 +11,13 @@ import {
   Col,
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
-import SettingModal from "components/Modal/SettingModal";
 import React, { useState } from "react";
 import { post } from "services/services";
 import { SuccessToast } from "Helper/Toast";
 import { ErrorToast } from "Helper/Toast";
 import { ApiURL } from "services/apiConstants";
-import { useNavigate } from "react-router-dom";
 
 const AddGameScreen = () => {
-  const navigate = useNavigate();
-  const [open, setOpen] = useState(false);
   const [name, setName] = useState('')
   const [resultTime, setResultTime] = useState('')
   const [openTime, setOpenTime] = useState('')
@@ -69,13 +65,7 @@ const AddGameScreen = () => {
     }
   };
 
-  const handleClose = () => {
-    setOpen(false);
-  };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
   return (
     <>
       <UserHeader />

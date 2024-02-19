@@ -25,40 +25,24 @@ import { get } from "services/services";
 import { socket } from "services/socket";
 
 const GameResultScreen = () => {
-  const navigate = useNavigate();
   const [drop, setDrop] = useState('')
   const [resultTime, setResultTime] = useState('')
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [gameData, setGameData] = useState([])
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
+  const [resultList, setResultList] = useState([])
   const [isConnected, setIsConnected] = useState(socket.connected);
 
-  const getUser_List = () => {
+  const getResult_List = () => {
     get(ApiURL.game_List).then((res) => {
-      console.log("res?.data", res)
       if (res && res?.status === true) {
-        setGameData(res?.data)
-        console.log("res?.data", res?.data)
+        setResultList(res?.data)
       }
     })
   }
   useEffect(() => {
-    getUser_List()
+    getResult_List()
   }, [])
-  const addGame = () => {
-    // const formData = {
-    //   gameId: drop,
-    //   number: resultTime,
-    // };
-    socket.emit('result', { startTime: null, endTime: null, number: resultTime, resultTime: null, gameId: drop })
 
-    // post(ApiURL.GameResult, formData).then(res => {
-    //   if (res && res?.data?.status == "active") {
-    //     SuccessToast(res?.message)
-    //   } else {
-    //     ErrorToast(res?.message)
-    //   }
-    // });
+  const addGame = () => {
+    socket.emit('result', { startTime: null, endTime: null, number: resultTime, resultTime: null, gameId: drop })
   };
 
 
@@ -80,39 +64,35 @@ const GameResultScreen = () => {
       return false;
     }
   };
+  function onConnect() {
+    console.log('socket Admin Connected *******');
+    setIsConnected(true);
+  }
+
+  function onDisconnect() {
+    console.log('socket Admin Disconnect =========');
+    setIsConnected(false);
+  }
+
+  function onFooEvent(value) { }
 
   useEffect(() => {
-    function onConnect() {
-      setIsConnected(true);
-    }
-
-    function onDisconnect() {
-      setIsConnected(false);
-    }
-
-    function onFooEvent(value) { }
-
-    socket.on('connection', onConnect);
+    socket.on('connect', onConnect);
     socket.on('disconnect', onDisconnect);
     socket.on('result_reload', (data) => {
-      if (data?.status === true) {
-        SuccessToast("result success")
+      if (data?.status == true) {
+        SuccessToast('result success');
       } else {
-        ErrorToast("result error")
+        ErrorToast('result error');
       }
-    })
-
-    socket.on('Error', (error) => {
-      console.log('error **** ', error);
     });
-    socket.on('foo', onFooEvent);
     return () => {
-      socket.off('connect', onConnect);
+      socket.disconnect();
+      socket.off('connection', onConnect);
       socket.off('disconnect', onDisconnect);
-      socket.off('foo', onFooEvent);
+
     };
   }, []);
-
 
   return (
     <>
@@ -135,29 +115,34 @@ const GameResultScreen = () => {
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
-                      <Col lg="5">
-                        <label
-                          className="form-control-label"
-                          htmlFor="input-gameName"
-                        >
-                          Game Name
-                        </label>
-                        <Row>
-                          <Dropdown isOpen={dropdownOpen} toggle={toggle} direction={'right'}>
-                            <DropdownToggle caret>Game Name Selected</DropdownToggle>
-                            <DropdownMenu style={{ maxHeight: '300px', overflowY: 'auto' }}>
-                              <DropdownItem header>Header</DropdownItem>
-                              {
-                                gameData.map((item) => {
-                                  return (
-                                    <DropdownItem onClick={() => { setDrop(item?._id) }}>{item?.name}</DropdownItem>
-                                  )
+                      <Col lg="6">
 
-                                })
-                              }
-                            </DropdownMenu>
-                          </Dropdown>
-                        </Row>
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-gameName"
+                          >
+                            Game Name
+                          </label>
+                          <Input
+                            id="exampleSelect"
+                            name="status"
+                            type="select"
+                            value={drop}
+                            onChange={(e) => { setDrop(e.target.value) }}
+                          >
+                            <option value={""} selected disabled>Game Name Selected</option>
+                            {resultList.map((item) => {
+                              return (
+                                <option value={item?._id}>
+                                  {item?.name}
+                                </option>
+                              )
+
+                            })}
+
+                          </Input>
+                        </FormGroup>
 
                       </Col>
 
@@ -195,8 +180,8 @@ const GameResultScreen = () => {
               </CardBody>
             </Card>
           </Col>
-        </Row>
-      </Container>
+        </Row >
+      </Container >
     </>
   );
 };

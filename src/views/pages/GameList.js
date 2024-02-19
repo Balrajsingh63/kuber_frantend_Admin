@@ -38,12 +38,11 @@ const GameRequestList = () => {
   const [openTime, setOpenTime] = useState("");
   const [closeTime, setCloseTime] = useState("");
   const [gameId, setGameId] = useState("");
-  const toggleModal = () => {
-    setExampleModal(!exampleModal);
-  };
-  const goToPage = (page) => {
-    setCurrentPage(page);
-  };
+
+  useEffect(() => {
+    getGame_List()
+  }, [])
+
 
   const handleUpdateGame = () => {
     const formData = {
@@ -52,9 +51,8 @@ const GameRequestList = () => {
       startTime: openTime,
       endTime: closeTime,
     };
-    console.log({ gameId })
     put(ApiURL.update_Game + "/" + gameId, formData).then((res) => {
-      if (res && res?.status == true) {
+      if (res && res?.status === true) {
         SuccessToast(res?.message)
         getGame_List()
         toggleModal()
@@ -78,14 +76,19 @@ const GameRequestList = () => {
 
   const getGame_List = () => {
     get(ApiURL.game_List).then((res) => {
+      // console.log("All Game list", res)
       if (res && res?.status === true) {
         setGameData(res?.data)
       }
     })
   }
-  useEffect(() => {
-    getGame_List()
-  }, [])
+  const toggleModal = () => {
+    setExampleModal(!exampleModal);
+  };
+  const goToPage = (page) => {
+    setCurrentPage(page);
+  };
+
 
   return (
     <>

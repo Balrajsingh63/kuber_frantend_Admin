@@ -1,9 +1,9 @@
 //@flow
 import axios from "axios";
-import { localURL } from "./apiConstants";
+import { baseURL } from "./apiConstants";
 
 const axiosData = {
-  baseURL: localURL,
+  baseURL,
   timeout: 120000,
   headers: {
     Accept: "application/json",

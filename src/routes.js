@@ -1,9 +1,10 @@
 import Index from "views/Index.js";
 import AddGameScreen from "views/pages/AddGame";
-import GameResultScreen from "views/pages/AddGameResult";
+import GameRequestList from "views/pages/GameList";
 import GameRequest from "views/pages/GameRequest";
-import GameRequestList from "views/pages/GameRequestList";
+import GameResultScreen from "views/pages/GameResult";
 import Profile from "views/pages/Profile.js";
+import TodayResultScreen from "views/pages/TodayResult";
 import UserManagement from "views/pages/UserManagement";
 import WithdrawalList from "views/pages/WithdrawalList";
 
@@ -45,7 +46,7 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/Add-Games-List",
+    path: "/Games-List",
     name: "Games List",
     icon: "ni ni-curved-next text-blue",
     component: <GameRequestList />,
@@ -65,6 +66,13 @@ var routes = [
     name: "Games Result",
     icon: "ni ni-controller text-green",
     component: <GameResultScreen />,
+    layout: "/admin",
+  },
+  {
+    path: "/Today-result",
+    name: "Today Result",
+    icon: "ni ni-controller text-green",
+    component: <TodayResultScreen />,
     layout: "/admin",
   },
 

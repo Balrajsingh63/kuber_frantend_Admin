@@ -15,25 +15,26 @@ import { ApiURL } from "../../services/apiConstants";
 import GameTables from "../../components/Tables/GameTable";
 
 const GameRequest = () => {
-  const [gameData, setGameData] = useState([])
+  const [GameRequestList, setGameRequestList] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
 
-  const getUser_List = () => {
+  const getGameRequest_List = () => {
     get(ApiURL.game_request_List).then((res) => {
+      // console.log('game_request_List **** ', res)
       if (res && res?.status === true) {
-        setGameData(res?.data)
+        setGameRequestList(res?.data)
       }
     })
   }
   useEffect(() => {
-    getUser_List()
+    getGameRequest_List()
   }, [])
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = gameData.slice(indexOfFirstRecord, indexOfLastRecord);
-  const totalPages = Math.ceil(gameData.length / recordsPerPage);
+  const currentRecords = GameRequestList.slice(indexOfFirstRecord, indexOfLastRecord);
+  const totalPages = Math.ceil(GameRequestList.length / recordsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const goToPage = (page) => {
@@ -80,7 +81,7 @@ const GameRequest = () => {
               <PaginationItem>
                 <PaginationLink previous onClick={goToPrevPage} />
               </PaginationItem>
-              {pageNumbers.map((page) => (
+              {pageNumbers?.map((page) => (
                 <PaginationItem key={page} active={page === currentPage}>
                   <PaginationLink onClick={() => goToPage(page)}>
                     {page}

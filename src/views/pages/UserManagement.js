@@ -17,6 +17,7 @@ const UserManagement = () => {
   const [phone, setPhone] = useState("")
   const [userId, setUserId] = useState("")
   const [status, setStatus] = useState("active")
+
   const getUserList = () => {
     get(ApiURL.user_List).then((res) => {
       if (res && res.status === true) {
@@ -53,13 +54,12 @@ const UserManagement = () => {
     }
   };
 
-  const handleUpdateGame = () => {
+  const updateUser = () => {
     const formData = {
       name: name,
       mobile: phone,
       status: status
     };
-    console.log({ userId })
     put(ApiURL.user_update + "/" + userId, formData).then((res) => {
       if (res && res?.status == true) {
         SuccessToast(res?.message)
@@ -219,7 +219,7 @@ const UserManagement = () => {
           >
             Close
           </Button>
-          <Button color="primary" type="button" onClick={handleUpdateGame}>
+          <Button color="primary" type="button" onClick={updateUser}>
             Save changes
           </Button>
         </div>
