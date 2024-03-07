@@ -37,6 +37,7 @@ const GameRequest = () => {
   const totalPages = Math.ceil(GameRequestList.length / recordsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
+
   const goToPage = (page) => {
     setCurrentPage(page);
   };

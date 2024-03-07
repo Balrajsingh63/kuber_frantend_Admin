@@ -24,28 +24,25 @@ const GameTables = ({ game_data }) => {
                 </thead>
                 {
                     game_data?.map((item) => {
-
                         let formatDate = moment(item?.date).format('l');
+                        let data = item?.data
+
+                        data.map((_item) => console.log('_item _item', _item?.games[0]?.name))
                         return (
                             <tbody>
                                 <tr>
                                     <th scope="row">
                                         <Media className="align-items-center">
-
                                             <Media>
-                                                <span className="mb-0 text-sm">{item?.userId?.name}</span>
+                                                <span className="mb-0 text-sm">{data.map((_item) => _item?.games[0]?.name)}</span>
                                             </Media>
                                         </Media>
                                     </th>
                                     <td>
-                                        {
-                                            item?.data?.gameNumber?.number
-                                        }
+                                        {data.map((_item) => _item?.gameNumber?.number)}
                                     </td>
                                     <td>
-                                        {
-                                            item?.data?.gameNumber?.price
-                                        }
+                                        {data.map((_item) => _item?.gameNumber?.price)}
                                     </td>
 
                                     <td>
@@ -55,7 +52,7 @@ const GameTables = ({ game_data }) => {
                                     </td>
                                     <td>
                                         <Badge color="" className="badge-dot mr-4">
-                                            {"Active"}
+                                            {data.map((_item) => _item?.status)}
                                         </Badge>
                                     </td>
                                     <td>

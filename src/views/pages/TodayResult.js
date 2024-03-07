@@ -33,11 +33,10 @@ const TodayResultScreen = () => {
   let resultList1 = filterGameList[0]?.gameRequest
   let date = filterGameList[0]?.createdAt
 
+  console.log('filterGameList *** ')
+
 
   let formatDate = moment(date).format('l');
-
-  // console.log("formatDate ", formatDate)
-
 
   const getResult_List = () => {
     get(ApiURL.game_List).then((res) => {
@@ -181,8 +180,6 @@ const TodayResultScreen = () => {
                     <th scope="col">Totle Number</th>
                     <th scope="col">Totle Price</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Action</th>
                     <th scope="col" />
                   </tr>
                 </thead>
@@ -195,8 +192,7 @@ const TodayResultScreen = () => {
 
                           <span className="mb-0 text-sm">
                             {
-                              filterGameList?.map((item) => item?.name
-                              )
+                              filterGameList[0]?.name
                             }
                           </span>
                         </Media>
@@ -204,17 +200,32 @@ const TodayResultScreen = () => {
                     </th>
                     <td>
                       {
-                        resultList1?.map((item) => item?._id + ',')
+                        resultList1?.map((item, index) => <tr>
+                          <td>
+                            {item?._id}
+                          </td>
+                        </tr>)
                       }
                     </td>
                     <td>
                       {
-                        resultList1?.map((item) => item?.count + ',')
+                        resultList1?.map((item, index) => <tr>
+                          <td>
+                            {item?.count}
+                          </td>
+                        </tr>)
                       }
                     </td>
+
+
+
                     <td>
                       {
-                        resultList1?.map((item) => item?.totalPrice + ',')
+                        resultList1?.map((item, index) => <tr>
+                          <td>
+                            {item?.totalPrice}
+                          </td>
+                        </tr>)
                       }
                     </td>
                     <td>
@@ -222,25 +233,11 @@ const TodayResultScreen = () => {
                         formatDate
                       }
                     </td>
-                    <td>
-                      {
-                        "Good"
-                      }
-                    </td>
-                    <td>
-                      {
-                        "active"
-                      }
-                    </td>
-
 
                   </tr>
                 </tbody>
-
               </Table>
             </Card>
-
-
           </Col>
         </Row >
       </Container >
