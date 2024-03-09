@@ -15,7 +15,7 @@ const GameTables = ({ game_data }) => {
                     <tr>
                         <th scope="col">Name</th>
                         <th scope="col">Game Number</th>
-                        <th scope="col">Price</th>
+                        <th scope="col">Amount</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>

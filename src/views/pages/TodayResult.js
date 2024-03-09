@@ -178,7 +178,7 @@ const TodayResultScreen = () => {
                     <th scope="col">Game Name</th>
                     <th scope="col">Game Number</th>
                     <th scope="col">Totle Number</th>
-                    <th scope="col">Totle Price</th>
+                    <th scope="col">Totle Amount</th>
                     <th scope="col">Date</th>
                     <th scope="col" />
                   </tr>
