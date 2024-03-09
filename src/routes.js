@@ -17,28 +17,6 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/UserManagement",
-    name: "user Management",
-    icon: "ni ni-planet text-blue",
-    component: <UserManagement />,
-    layout: "/admin",
-  },
-  {
-    path: "/GameRequest",
-    name: "Game request",
-    icon: "ni ni-curved-next text-orange",
-    component: <GameRequest />,
-    layout: "/admin",
-  },
-
-  {
-    path: "/user-profile",
-    name: "User Profile",
-    icon: "ni ni-single-02 text-yellow",
-    component: <Profile />,
-    layout: "/admin",
-  },
-  {
     path: "/Add-Games",
     name: "Add Games",
     icon: "ni ni-controller text-green",
@@ -52,6 +30,13 @@ var routes = [
     component: <GameRequestList />,
     layout: "/admin",
 
+  },
+  {
+    path: "/GameRequest",
+    name: "Game request",
+    icon: "ni ni-curved-next text-orange",
+    component: <GameRequest />,
+    layout: "/admin",
   },
   {
     path: "/Payment-Withdrawal-List",
@@ -73,6 +58,21 @@ var routes = [
     name: "Today Result",
     icon: "ni ni-controller text-green",
     component: <TodayResultScreen />,
+    layout: "/admin",
+  },
+  {
+    path: "/UserManagement",
+    name: "All Users",
+    icon: "ni ni-planet text-blue",
+    component: <UserManagement />,
+    layout: "/admin",
+  },
+
+  {
+    path: "/user-profile",
+    name: "User Profile",
+    icon: "ni ni-single-02 text-yellow",
+    component: <Profile />,
     layout: "/admin",
   },
 

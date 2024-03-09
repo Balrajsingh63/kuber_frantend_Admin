@@ -34,15 +34,20 @@ const GameTables = ({ game_data }) => {
                                     <th scope="row">
                                         <Media className="align-items-center">
                                             <Media>
-                                                <span className="mb-0 text-sm">{data.map((_item) => _item?.games[0]?.name)}</span>
+                                                <span className="mb-0 text-sm">{data.map((_item) =>
+                                                    <tr><td>{_item?.games[0]?.name}</td></tr>
+                                                )
+
+                                                }</span>
                                             </Media>
                                         </Media>
                                     </th>
+
                                     <td>
-                                        {data.map((_item) => _item?.gameNumber?.number)}
+                                        {data.map((_item) => <tr><td>{_item?.gameNumber?.number}</td></tr>)}
                                     </td>
                                     <td>
-                                        {data.map((_item) => _item?.gameNumber?.price)}
+                                        {data.map((_item) => <tr><td>{_item?.gameNumber?.price}</td></tr>)}
                                     </td>
 
                                     <td>
@@ -52,7 +57,7 @@ const GameTables = ({ game_data }) => {
                                     </td>
                                     <td>
                                         <Badge color="" className="badge-dot mr-4">
-                                            {data.map((_item) => _item?.status)}
+                                            {data.map((_item) => <tr><td>{_item?.status}</td></tr>)}
                                         </Badge>
                                     </td>
                                     <td>
