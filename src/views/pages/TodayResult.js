@@ -10,12 +10,10 @@ import {
   Row,
   Col,
   Table,
-  Badge,
   Media
 } from "reactstrap";
 import UserHeader from "components/Headers/UserHeader.js";
 import React, { useEffect, useState } from "react";
-import { post } from "services/services";
 import { SuccessToast } from "Helper/Toast";
 import { ErrorToast } from "Helper/Toast";
 import { ApiURL } from "services/apiConstants";
@@ -33,7 +31,6 @@ const TodayResultScreen = () => {
   let resultList1 = filterGameList[0]?.gameRequest
   let date = filterGameList[0]?.createdAt
 
-  console.log('filterGameList *** ')
 
 
   let formatDate = moment(date).format('l');
@@ -52,6 +49,7 @@ const TodayResultScreen = () => {
 
   const todayGame = () => {
     get(`${ApiURL.filter_game}?gameId=${drop}&date=${resultDate}`).then(res => {
+      console.log("filter data===", res)
       if (res && res?.status == true) {
         setFilterGameList(res?.data)
         SuccessToast(res?.message)
@@ -189,7 +187,6 @@ const TodayResultScreen = () => {
                     <th scope="row">
                       <Media className="align-items-center">
                         <Media>
-
                           <span className="mb-0 text-sm">
                             {
                               filterGameList[0]?.name
@@ -216,9 +213,6 @@ const TodayResultScreen = () => {
                         </tr>)
                       }
                     </td>
-
-
-
                     <td>
                       {
                         resultList1?.map((item, index) => <tr>
@@ -229,11 +223,8 @@ const TodayResultScreen = () => {
                       }
                     </td>
                     <td>
-                      {
-                        formatDate
-                      }
+                      {formatDate}
                     </td>
-
                   </tr>
                 </tbody>
               </Table>

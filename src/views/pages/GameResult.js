@@ -29,6 +29,9 @@ const GameResultScreen = () => {
   const [resultTime, setResultTime] = useState('')
   const [resultList, setResultList] = useState([])
   const [isConnected, setIsConnected] = useState(socket.connected);
+  const [date, setDate] = useState(new Date())
+
+  console.log(date)
 
   const getResult_List = () => {
     get(ApiURL.game_List).then((res) => {
@@ -42,7 +45,7 @@ const GameResultScreen = () => {
   }, [])
 
   const addGame = () => {
-    socket.emit('result', { startTime: null, endTime: null, number: resultTime, resultTime: null, gameId: drop })
+    socket.emit('result', { startTime: null, endTime: null, number: resultTime, resultTime: null, gameId: drop, date: date })
   };
 
 
@@ -115,7 +118,7 @@ const GameResultScreen = () => {
                   </h6>
                   <div className="pl-lg-4">
                     <Row>
-                      <Col lg="6">
+                      <Col lg="4">
 
                         <FormGroup>
                           <label
@@ -145,14 +148,35 @@ const GameResultScreen = () => {
                         </FormGroup>
 
                       </Col>
+                      <Col lg="4">
 
-                      <Col lg="6">
+                        <FormGroup>
+                          <label
+                            className="form-control-label"
+                            htmlFor="input-gameName"
+                          >
+                            Date
+                          </label>
+                          <Input
+                            id="exampleSelect"
+                            name="status"
+                            type="Date"
+                            value={date}
+                            onChange={(e) => { setDate(e.target.value) }}
+                          >
+                            <option value={""} selected disabled>Selected Date</option>
+                          </Input>
+                        </FormGroup>
+
+                      </Col>
+
+                      <Col lg="4">
                         <FormGroup>
                           <label
                             className="form-control-label"
                             htmlFor="input-number"
                           >
-                            Result Time
+                            Result Number
                           </label>
                           <Input
                             className="form-control-alternative"

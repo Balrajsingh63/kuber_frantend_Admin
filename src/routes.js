@@ -6,6 +6,7 @@ import GameResultScreen from "views/pages/GameResult";
 import Profile from "views/pages/Profile.js";
 import TodayResultScreen from "views/pages/TodayResult";
 import UserManagement from "views/pages/UserManagement";
+import WalletUpdate from "views/pages/WalletUpdate";
 import WithdrawalList from "views/pages/WithdrawalList";
 
 var routes = [
@@ -46,6 +47,14 @@ var routes = [
     layout: "/admin",
 
   },
+
+  {
+    path: "/Today-result",
+    name: "Today Result",
+    icon: "ni ni-controller text-green",
+    component: <TodayResultScreen />,
+    layout: "/admin",
+  },
   {
     path: "/Games-Result",
     name: "Games Result",
@@ -54,12 +63,13 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/Today-result",
-    name: "Today Result",
+    path: "/user-Update-Wallet",
+    name: "Update Wallet",
     icon: "ni ni-controller text-green",
-    component: <TodayResultScreen />,
+    component: <WalletUpdate />,
     layout: "/admin",
   },
+
   {
     path: "/UserManagement",
     name: "All Users",

@@ -1,8 +1,9 @@
-export const localURL = "http://localhost:3006/v1/admin/";
 const liveURL = "https://kuberfun.com/v1/admin/";
-
-const socketLocalURL = 'http://localhost:3006';
 const socketLiveURL = 'http://16.170.158.180:3006';
+
+export const localURL = "http://localhost:3006/v1/admin/";
+const socketLocalURL = 'http://localhost:3006';
+
 
 
 export const baseURL = liveURL;
@@ -25,6 +26,6 @@ export const ApiURL = {
   GameResult: 'game/result',
   delete_Game: "game/delete",
   update_Game: "game/update",
-  today_game: 'game/today-result',
   filter_game: 'game/filter-game',
+  update_wallet: 'game/update-wallet'
 };
