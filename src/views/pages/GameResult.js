@@ -23,13 +23,14 @@ import { ApiURL } from "services/apiConstants";
 import { useNavigate } from "react-router-dom";
 import { get } from "services/services";
 import { socket } from "services/socket";
+import moment from "moment";
 
 const GameResultScreen = () => {
   const [drop, setDrop] = useState('')
   const [resultTime, setResultTime] = useState('')
   const [resultList, setResultList] = useState([])
   const [isConnected, setIsConnected] = useState(socket.connected);
-  const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'))
 
   console.log(date)
 

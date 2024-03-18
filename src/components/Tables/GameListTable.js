@@ -38,21 +38,21 @@ const GameListTables = ({ game_data, toggleModal, exampleModal, getGame_List, se
     return (
         <>
             <Table className="align-items-center" responsive>
-                <thead className="thead-light">
-                    <tr>
+                <thead className="thead-danger">
+                    <tr className="table-danger">
                         <th scope="col">Name</th>
                         <th scope="col">Result Time</th>
                         <th scope="col">Start Time</th>
                         <th scope="col">End Time</th>
-                        <th scope="col">Action</th>
-                        <th scope="col" />
+                        <th scope="col">Delete</th>
+                        <th scope="col">Edit</th>
                     </tr>
                 </thead>
                 {
                     game_data?.map((item, i) => {
                         return (
                             <tbody>
-                                <tr>
+                                <tr className="table-success">
                                     <th scope="row">
                                         <Media className="align-items-center">
                                             <Media>
@@ -71,9 +71,9 @@ const GameListTables = ({ game_data, toggleModal, exampleModal, getGame_List, se
                                             {item?.endTime}
                                         </Badge>
                                     </td>
-                                    <td>
-                                        <Badge color="red" className="badge-dot mr-4">
-                                            <i className="ni ni-fat-remove" data-placement="top" id="tooltip611234743" style={{ fontSize: "30px" }} onClick={() => handleDelete(item)}></i>
+                                    <td >
+                                        <Badge color="red" className="badge-dot mr-4 ">
+                                            <i className="ni ni-fat-remove" data-placement="top" id="tooltip611234743" style={{ fontSize: "30px", color: "red" }} onClick={() => handleDelete(item)}></i>
                                             <UncontrolledTooltip
                                                 delay={0}
                                                 placement="top"
@@ -82,8 +82,10 @@ const GameListTables = ({ game_data, toggleModal, exampleModal, getGame_List, se
                                                 Delete
                                             </UncontrolledTooltip>
                                         </Badge>
+                                    </td>
+                                    <td>
                                         <Badge color="green" className="badge-dot mr-4">
-                                            <i className="ni ni-ruler-pencil" data-placement="top" id="tooltip611234744" style={{ fontSize: "15px" }} onClick={() => toggleModal(item)}></i>
+                                            <i className="ni ni-ruler-pencil" data-placement="top" id="tooltip611234744" style={{ fontSize: "15px", color: "green" }} onClick={() => toggleModal(item)}></i>
                                             <UncontrolledTooltip
                                                 delay={0}
                                                 placement="top"

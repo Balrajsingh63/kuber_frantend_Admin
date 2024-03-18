@@ -36,21 +36,19 @@ const Tables = ({ user_data, toggleModal, setVisible, visible, setName, setPhone
     return (
         <>
             <Table className="align-items-center" responsive>
-                <thead className="thead-light">
-                    <tr>
+                <thead className="thead-danger">
+                    <tr className="table-danger">
                         <th scope="col">Name</th>
                         <th scope="col">mobile</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
-                        <th scope="col" />
                     </tr>
                 </thead>
                 {
                     user_data?.map((item) => {
-
                         return (
                             <tbody>
-                                <tr>
+                                <tr className="table-success">
                                     <th scope="row">
                                         <Media className="align-items-center">
                                             <Media>

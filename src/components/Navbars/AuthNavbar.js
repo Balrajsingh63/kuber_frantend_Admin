@@ -21,7 +21,7 @@ const AdminNavbar = () => {
           <NavbarBrand to="/" tag={Link}>
             <img
               alt="..."
-              src={require("../../assets/img/brand/satta.png")}
+              src={require("../../assets/img/brand/satta.jpg")}
               style={{ height: '35%', width: '35%' }}
             />
           </NavbarBrand>
@@ -35,7 +35,7 @@ const AdminNavbar = () => {
                   <Link to="/">
                     <img
                       alt="..."
-                      src={require("../../assets/img/brand/satta.png")}
+                      src={require("../../assets/img/brand/satta.jpg")}
                       style={{ height: '35%', width: '35%' }}
                     />
                   </Link>

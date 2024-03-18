@@ -6,11 +6,11 @@ const socketLocalURL = 'http://localhost:3006';
 
 
 
-export const baseURL = liveURL;
-// export const baseURL = localURL;
+// export const baseURL = liveURL;
+export const baseURL = localURL;
 
-// export const socketURL = socketLocalURL;
-export const socketURL = socketLiveURL;
+export const socketURL = socketLocalURL;
+// export const socketURL = socketLiveURL;
 
 
 

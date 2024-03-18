@@ -148,8 +148,6 @@ const GameRequestList = () => {
           </div>
         </Row>
       </Container>
-
-
       <Modal
         className="modal-dialog-centered"
         isOpen={exampleModal}

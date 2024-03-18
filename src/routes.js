@@ -27,7 +27,7 @@ var routes = [
   {
     path: "/Games-List",
     name: "Games List",
-    icon: "ni ni-curved-next text-blue",
+    icon: "ni ni-bullet-list-67 text-brown",
     component: <GameRequestList />,
     layout: "/admin",
 
@@ -42,7 +42,7 @@ var routes = [
   {
     path: "/Payment-Withdrawal-List",
     name: "Withdrawal List",
-    icon: "ni ni-curved-next text-danger",
+    icon: "ni ni-bullet-list-67 text-blue",
     component: <WithdrawalList />,
     layout: "/admin",
 
@@ -51,21 +51,21 @@ var routes = [
   {
     path: "/Today-result",
     name: "Today Result",
-    icon: "ni ni-controller text-green",
+    icon: "ni ni-time-alarm text-red",
     component: <TodayResultScreen />,
     layout: "/admin",
   },
   {
     path: "/Games-Result",
     name: "Games Result",
-    icon: "ni ni-controller text-green",
+    icon: "ni ni-check-bold text-green",
     component: <GameResultScreen />,
     layout: "/admin",
   },
   {
     path: "/user-Update-Wallet",
     name: "Update Wallet",
-    icon: "ni ni-controller text-green",
+    icon: "ni ni-archive-2 text-purple",
     component: <WalletUpdate />,
     layout: "/admin",
   },

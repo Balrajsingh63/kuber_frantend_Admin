@@ -11,15 +11,15 @@ const GameTables = ({ game_data }) => {
     return (
         <>
             <Table className="align-items-center" responsive>
-                <thead className="thead-light">
-                    <tr>
+                <thead className="thead-danger">
+                    <tr className="table-danger">
                         <th scope="col">Name</th>
                         <th scope="col">Game Number</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
-                        <th scope="col" />
+
                     </tr>
                 </thead>
                 {
@@ -30,7 +30,7 @@ const GameTables = ({ game_data }) => {
                         data.map((_item) => console.log('_item _item', _item?.games[0]?.name))
                         return (
                             <tbody>
-                                <tr>
+                                <tr className="table-success">
                                     <th scope="row">
                                         <Media className="align-items-center">
                                             <Media>

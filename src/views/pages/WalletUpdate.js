@@ -17,12 +17,13 @@ import { ErrorToast } from "Helper/Toast";
 import { ApiURL } from "services/apiConstants";
 import { get } from "services/services";
 import { post } from "services/services";
+import moment from "moment";
 
 
 
 const WalletUpdate = () => {
   const [drop, setDrop] = useState('')
-  const [resultDate, setDate] = useState(new Date())
+  const [resultDate, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'))
   const [resultList, setResultList] = useState([])
 
   const getResult_List = () => {
@@ -42,7 +43,7 @@ const WalletUpdate = () => {
       gameId: drop,
       date: resultDate
     };
-    console.log("formData***", formData);
+    // console.log("formData***", formData);
     post(ApiURL.update_wallet, formData).then((res => {
       if (res && res?.status == true) {
         SuccessToast(res?.message)

@@ -24,7 +24,7 @@ import moment from "moment";
 
 const TodayResultScreen = () => {
   const [drop, setDrop] = useState('')
-  const [resultDate, setDate] = useState(new Date())
+  const [resultDate, setDate] = useState(moment(new Date()).format('YYYY-MM-DD'))
   const [resultList, setResultList] = useState([])
   const [filterGameList, setFilterGameList] = useState([])
 
@@ -171,19 +171,19 @@ const TodayResultScreen = () => {
               </CardBody>
               <Table
               >
-                <thead>
-                  <tr>
+                <thead className="thead-danger">
+                  <tr className="table-danger">
                     <th scope="col">Game Name</th>
                     <th scope="col">Game Number</th>
                     <th scope="col">Totle Number</th>
                     <th scope="col">Totle Amount</th>
                     <th scope="col">Date</th>
-                    <th scope="col" />
+
                   </tr>
                 </thead>
 
                 <tbody>
-                  <tr>
+                  <tr className="table-success">
                     <th scope="row">
                       <Media className="align-items-center">
                         <Media>
