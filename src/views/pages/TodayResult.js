@@ -169,8 +169,7 @@ const TodayResultScreen = () => {
                 </Form>
 
               </CardBody>
-              <Table
-              >
+              <Table responsive>
                 <thead className="thead-danger">
                   <tr className="table-danger">
                     <th scope="col">Game Name</th>
