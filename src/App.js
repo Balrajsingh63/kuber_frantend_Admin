@@ -14,14 +14,16 @@ const App = () => {
     return (
         <HashRouter>
             <Routes>
-                {
-                    userData?.token ? <Route path="*" element={<Navigate to="/admin/index" replace />} /> : <Route path="*" element={<Navigate to="/Auth/login" replace />} />
-                }
+
                 {
                     userData?.token ? <Route path="/admin/*" element={<AdminLayout />} /> : <Route path="/auth/*" element={<AuthLayout />} />
                 }
+                {
+                    userData?.token ? <Route path="*" element={<Navigate to="/admin/index" replace />} /> : <Route path="*" element={<Navigate to="/Auth/login" replace />} />
+                }
             </Routes>
         </HashRouter>
+
     );
 };
 

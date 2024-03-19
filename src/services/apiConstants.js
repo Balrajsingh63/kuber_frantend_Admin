@@ -1,5 +1,5 @@
 const liveURL = "https://kuberfun.com/v1/admin/";
-const socketLiveURL = 'http://16.170.158.180:3006';
+const socketLiveURL = 'https://kuberfun.com';
 
 export const localURL = "http://localhost:3006/v1/admin/";
 const socketLocalURL = 'http://localhost:3006';
