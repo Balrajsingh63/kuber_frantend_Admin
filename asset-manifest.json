@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/kuber_frantend_Admin/static/css/main.f2662b84.css",
-    "main.js": "/kuber_frantend_Admin/static/js/main.401bfb2e.js",
+    "main.js": "/kuber_frantend_Admin/static/js/main.94bcad72.js",
     "static/media/fa-solid-900.ttf": "/kuber_frantend_Admin/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
     "static/media/fa-brands-400.ttf": "/kuber_frantend_Admin/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
     "static/media/satta.jpg": "/kuber_frantend_Admin/static/media/satta.19c7627536a10789bb10.jpg",
@@ -22,6 +22,6 @@
   },
   "entrypoints": [
     "static/css/main.f2662b84.css",
-    "static/js/main.401bfb2e.js"
+    "static/js/main.94bcad72.js"
   ]
 }
