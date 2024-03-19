@@ -95,7 +95,7 @@ const Sidebar = (props) => {
               alt={logo.imgAlt}
               className="navbar-brand-img"
               src={logo.imgSrc}
-
+              style={{ height: '20%', width: '20%', borderRadius: '100%' }}
             />
           </NavbarBrand>
         ) : null}

@@ -22,7 +22,7 @@ const AdminNavbar = () => {
             <img
               alt="..."
               src={require("../../assets/img/brand/satta.jpg")}
-              style={{ height: '35%', width: '35%' }}
+              style={{ height: '5%', width: '5%', borderRadius: '100%' }}
             />
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
