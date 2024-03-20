@@ -10,13 +10,13 @@ const WithdrawalListTable = ({ game_data }) => {
     return (
         <>
             <Table className="align-items-center" responsive>
-                <thead className="thead-light">
-                    <tr>
+                <thead className="thead-danger">
+                    <tr className="table-danger">
                         <th scope="col">Upi</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
-                        <th scope="col" />
+
                     </tr>
                 </thead>
                 {
@@ -25,7 +25,7 @@ const WithdrawalListTable = ({ game_data }) => {
                         let formatDate = moment(item?.date).format('l');
                         return (
                             <tbody>
-                                <tr>
+                                <tr className="table-success">
                                     <th scope="row">
                                         <Media className="align-items-center">
                                             <Media>

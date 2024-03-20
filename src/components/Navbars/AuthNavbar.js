@@ -21,8 +21,8 @@ const AdminNavbar = () => {
           <NavbarBrand to="/" tag={Link}>
             <img
               alt="..."
-              src={require("../../assets/img/brand/satta.png")}
-              style={{ height: '35%', width: '35%' }}
+              src={require("../../assets/img/brand/satta.jpg")}
+              style={{ height: '5%', width: '5%', borderRadius: '100%' }}
             />
           </NavbarBrand>
           <button className="navbar-toggler" id="navbar-collapse-main">
@@ -35,7 +35,7 @@ const AdminNavbar = () => {
                   <Link to="/">
                     <img
                       alt="..."
-                      src={require("../../assets/img/brand/satta.png")}
+                      src={require("../../assets/img/brand/satta.jpg")}
                       style={{ height: '35%', width: '35%' }}
                     />
                   </Link>

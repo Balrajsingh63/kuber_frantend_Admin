@@ -31,7 +31,7 @@ const Profile = () => {
                       <img
                         alt="..."
                         className="rounded-circle"
-                        src={require("../../assets/img/theme/satta.png")}
+                        src={require("../../assets/img/theme/satta.jpg")}
                       />
                     </a>
                   </div>

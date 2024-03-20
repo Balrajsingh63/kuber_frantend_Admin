@@ -17,14 +17,14 @@ import WithdrawalListTable from "components/Tables/WithdrawalListTable";
 
 
 const WithdrawalList = () => {
-  const [gameData, setGameData] = useState([])
+  const [GameWithdrawal, setGameWithdrawal] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = gameData.slice(indexOfFirstRecord, indexOfLastRecord);
-  const totalPages = Math.ceil(gameData.length / recordsPerPage);
+  const currentRecords = GameWithdrawal.slice(indexOfFirstRecord, indexOfLastRecord);
+  const totalPages = Math.ceil(GameWithdrawal.length / recordsPerPage);
   const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   const goToPage = (page) => {
@@ -46,7 +46,7 @@ const WithdrawalList = () => {
   const Withdrawal_List = () => {
     get(ApiURL.withdrawal).then((res) => {
       if (res && res?.status === true) {
-        setGameData(res?.data)
+        setGameWithdrawal(res?.data)
       }
     })
   }

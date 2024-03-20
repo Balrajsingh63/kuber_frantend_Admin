@@ -9,9 +9,9 @@ const UserHeader = ({ title }) => {
       <div
         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
-          minHeight: "600px",
+          minHeight: "400px",
           backgroundImage:
-            "url(" + require("../../assets/img/theme/profile-cover.jpg") + ")",
+            "url(" + require("../../assets/img/theme/team-4-800x800.jpg") + ")",
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}

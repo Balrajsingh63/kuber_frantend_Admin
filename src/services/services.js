@@ -1,8 +1,8 @@
 import instance from "./axiosInterceptors";
 import AsyncStorageHelper from '../Helper/AsyncStorageHelper';
-
+let token = await localStorage.getItem('token');
 export const post = async (url, formData, type) => {
-  let token = await localStorage.getItem('token');
+
   const options = {
     headers: {
       authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ export const put = async (url, formData, type) => {
   // let token = await AsyncStorageHelper.getData('token');
   const options = {
     headers: {
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       Accept: type == true ? "multipart/form-data" : "application/json",
       "Content-Type": type == true ? "multipart/form-data" : "application/json",
     },
@@ -66,7 +66,7 @@ export const deleteApi = async (url, type = 0) => {
   // let token = await AsyncStorageHelper.getData('token');
   const options = {
     headers: {
-      // Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${token}`,
       Accept: "application/json",
       "Content-Type": "application/json",
     },
