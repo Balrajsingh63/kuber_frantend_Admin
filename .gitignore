@@ -9,6 +9,8 @@ firebase-debug.*.log*
 
 # Firebase cache
 .firebase/
+node_modules
+/node_modules
 
 # Firebase config
 
