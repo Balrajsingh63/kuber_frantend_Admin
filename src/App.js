@@ -12,7 +12,7 @@ import AuthLayout from "layouts/Auth.js";
 const App = () => {
     const userData = useSelector(state => state.authReducer.user);
     return (
-        <HashRouter>
+        <BrowserRouter>
             <Routes>
 
                 {
@@ -22,7 +22,7 @@ const App = () => {
                     userData?.token ? <Route path="*" element={<Navigate to="/admin/index" replace />} /> : <Route path="*" element={<Navigate to="/Auth/login" replace />} />
                 }
             </Routes>
-        </HashRouter>
+        </BrowserRouter>
 
     );
 };
