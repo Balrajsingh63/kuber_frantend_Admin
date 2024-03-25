@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/kuber_frantend_Admin/static/css/main.0a07a89b.css",
+    "main.js": "/kuber_frantend_Admin/static/js/main.76a49892.js",
+    "static/media/fa-solid-900.ttf": "/kuber_frantend_Admin/static/media/fa-solid-900.4a2cd718d7031b732e76.ttf",
+    "static/media/fa-brands-400.ttf": "/kuber_frantend_Admin/static/media/fa-brands-400.150de8eaa454d669c405.ttf",
+    "static/media/satta.jpg": "/kuber_frantend_Admin/static/media/satta.19c7627536a10789bb10.jpg",
+    "static/media/team-1-800x800.jpg": "/kuber_frantend_Admin/static/media/team-1-800x800.fa5a7ac2c81a43925586.jpg",
+    "static/media/fa-solid-900.woff2": "/kuber_frantend_Admin/static/media/fa-solid-900.bb975c966c37455a1bc3.woff2",
+    "static/media/nucleo-icons.svg": "/kuber_frantend_Admin/static/media/nucleo-icons.95fa360c1c73431a0f9a.svg",
+    "static/media/team-4-800x800.jpg": "/kuber_frantend_Admin/static/media/team-4-800x800.99c612eb60728a5aeeb0.jpg",
+    "static/media/fa-brands-400.woff2": "/kuber_frantend_Admin/static/media/fa-brands-400.e033a13ee751afc1860c.woff2",
+    "static/media/fa-regular-400.ttf": "/kuber_frantend_Admin/static/media/fa-regular-400.d87474231f4192884802.ttf",
+    "static/media/fa-regular-400.woff2": "/kuber_frantend_Admin/static/media/fa-regular-400.3223dc79c1adee56370b.woff2",
+    "static/media/nucleo-icons.eot": "/kuber_frantend_Admin/static/media/nucleo-icons.19abb5402a664606b14c.eot",
+    "static/media/nucleo-icons.ttf": "/kuber_frantend_Admin/static/media/nucleo-icons.d6a66724e7a7bf1bba65.ttf",
+    "static/media/nucleo-icons.woff": "/kuber_frantend_Admin/static/media/nucleo-icons.c82c9b7c40130b7116d3.woff",
+    "static/media/fa-v4compatibility.ttf": "/kuber_frantend_Admin/static/media/fa-v4compatibility.0e3a648be390bd8cb094.ttf",
+    "static/media/nucleo-icons.woff2": "/kuber_frantend_Admin/static/media/nucleo-icons.cba267483aa6a7cb6e33.woff2",
+    "static/media/fa-v4compatibility.woff2": "/kuber_frantend_Admin/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
+    "index.html": "/kuber_frantend_Admin/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.0a07a89b.css",
+    "static/js/main.76a49892.js"
+  ]
+}
